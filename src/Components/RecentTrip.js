@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../index.css';
 import './recentTrip.css';
 import image1 from './Asset/1691680881747.jpeg';
 import image2 from './Asset/Sakleshpur.jpg';
+import { motion } from 'framer-motion';
 
 const RecentTrip = () => {
   const [showFullText, setShowFullText] = useState(false);
@@ -10,14 +11,55 @@ const RecentTrip = () => {
   const toggleText = () => {
     setShowFullText(!showFullText);
   };
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [cursorVariant, setCursorVariant] = useState('default');
 
+  useEffect(() => {
+    const mouseMove = (e) => {
+      setMousePosition({ x: e.clientX, y: e.clientY });
+    };
+
+    window.addEventListener('mousemove', mouseMove)
+    return () => {
+      window.removeEventListener('mousemove', mouseMove)
+    } 
+  },[]);
+
+  const variants = {
+    default: {
+      x: mousePosition.x,
+      y: mousePosition.y,
+    }, 
+    text: {
+      height:120,
+      width:120,
+      x: mousePosition.x-16,
+      y: mousePosition.y-16,
+      backgroundColor: 'black', 
+      mixBlendMode: 'difference',
+    },
+  }
+  
+  const textEnter = () => {
+    setCursorVariant('text');
+
+  }
+  const textLeave = () => {
+    setCursorVariant('default');
+  }
   return (
     <>
       <div className='recentTrip mt-[100px]'>
-        <h1 className='text-[45px] md:text-[60px] relative text-center font-extrabold'>Our Recent Trip</h1>
-        <p className='text-[30px] text-gray-500 relative text-center font-extrabold mb-[70px]'>
+        <h1 onMouseEnter={textEnter} onMouseLeave={textLeave} className='text-[45px] hover:text-white  md:text-5xl lg:text-7xl md:mb-4 relative text-center font-extrabold'>Our Recent Trip</h1>
+        <motion.div
+        className='cursor'
+        variants={variants}
+        animate={cursorVariant}
+        />
+        <p className='titel text-[30px] text-gray-500 relative text-center font-extrabold mb-[70px]'>
           Adventures fill your soul with stories
         </p>
+        
 
         <div className='destination mb-[100px] ml-[50px] mr-[50px] flex items-center justify-between '>
           <div className='destiText w-[45%] text-start text-[20px] '>
