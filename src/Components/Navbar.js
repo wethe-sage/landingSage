@@ -5,8 +5,8 @@ const Navbar = () => {
  
 
   return (
-    <div>
-      <div className='flex justify-between items-center'>
+    <div className=''>
+      <div className='flex h-[70px] shadow-2xl justify-between items-center bg-slate-200'>
         <div>
           <Link to='/'>
           <img src={logo} alt='logo' className='h-[100px]'></img>
@@ -15,14 +15,14 @@ const Navbar = () => {
         
         <div className='  '>
           <ul 
-            className='flex gap-3 p-[5px] justify-center align-baseline'>
+            className='flex gap-3 p-[10px] justify-center align-baseline'>
             <li>
-              <Link to='/about' className='text-lg ' >
+              <Link to='/about' className='text-lg font-semibold ' >
                 About Us
               </Link>
             </li>
             <li>
-              <Link to='/contact' className='text-lg' >
+              <Link to='/contact' className='text-lg font-semibold' >
                 Contact
               </Link>
             </li>
