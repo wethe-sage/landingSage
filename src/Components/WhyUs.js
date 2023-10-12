@@ -3,13 +3,22 @@ import why from './Asset/why2.jpg';
 import bg from './Asset/bg.jpg';
 import './recentTrip.css';
 import { motion } from 'framer-motion';
-
+import {useScroll, useTransform } from 'framer-motion';
+import { useRef } from 'react';
 const WhyUs = () => {
+  const ref =useRef(null);
+  const {scrollYProgress}=useScroll({
+    target: ref,
+    offset:["0 1", "0.85 1"],
+
+  })
+  const scaleProgess =useTransform(scrollYProgress, [0, 1], [0.5,1]);
+  const opacityProgess =useTransform(scrollYProgress, [0, 1], [0.6,1]);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [cursorVariant, setCursorVariant] = useState('default');
+  const [headingHovered, setHeadingHovered] = useState(false);
 
   useEffect(() => {
-    // Check if the screen width is greater than a certain threshold (e.g., 768 pixels for tablets)
     if (window.innerWidth > 768) {
       const mouseMove = (e) => {
         setMousePosition({ x: e.clientX, y: e.clientY });
@@ -33,11 +42,11 @@ const WhyUs = () => {
       width: 120,
       x: mousePosition.x - 16,
       y: mousePosition.y - 16,
-      backgroundColor: 'white',
+      backgroundColor: '#bcad3c',
       mixBlendMode: 'difference',
     },
-  };
-
+  }
+  
   const textEnter = () => {
     setCursorVariant('text');
   };
@@ -47,11 +56,26 @@ const WhyUs = () => {
   };
 
   return (
-    <div className="bg-gray-100 py-10 md:py-20 px-4">
+    
+    <motion.div  ref={ref}
+    style={
+      {
+        scale:scaleProgess,
+        opacity:opacityProgess,
+      }
+    } className="bg-gray-100 py-10 md:py-20 px-4">
       <h1
-        onMouseEnter={textEnter}
-        onMouseLeave={textLeave}
-        className="text-[40px] text-center font-bold md:text-center text-[#164154]  md:text-[55px] md:font-bold mt-4 md:mt-0 md:-mb-[80px] mb-6"
+        onMouseEnter={() => {
+          textEnter();
+          setHeadingHovered(true);
+        }}
+        onMouseLeave={() => {
+          textLeave();
+          setHeadingHovered(false);
+        }}
+        className={`text-[40px] text-center font-bold md:text-center md:text-[55px] md:font-bold mt-4 md:mt-0 md:-mb-[80px]  mb-6 ${
+          headingHovered ? 'text-why-hovered' : '' 
+        }`}
       >
         Why Choose SAGE?
       </h1>
@@ -66,7 +90,11 @@ const WhyUs = () => {
           alt="Background"
         />
 
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 md:translate-x-0 md:translate-y-0 md:top-[15%] md:left-[18%] md:w-[65%] md:rounded-xl md:h-auto md:bg-[#fff] md:p-8">
+        <motion.div  ref={ref}
+        style={{
+              scale:scaleProgess,
+              opacity:opacityProgess,
+            }} className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 md:translate-x-0 md:translate-y-0 md:top-[15%] md:left-[18%] md:w-[65%] md:rounded-xl md:h-auto md:bg-[#fff] md:p-8">
           <div className="flex gap-[70px]">
             <img
               className="hidden lg:block md:mt-0 md:w-[350px] md:h-[300px] md:flex items-center  md:rounded-xl"
@@ -80,9 +108,10 @@ const WhyUs = () => {
               </p>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
+  
   );
 };
 
