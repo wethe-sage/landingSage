@@ -45,7 +45,7 @@ const Hero = () => {
       
         <div className='relative'>
           <img src={hero} className='w-full h-auto' alt='Hero Image' />
-          <div className='absolute top-1/4 left-[28%] md:top-[40%] transform -translate-x-1/2 -translate-y-1/2'>
+          <div className='absolute top-1/4 left-[30%] md:top-[40%] transform -translate-x-1/2 -translate-y-1/2'>
           <MovingComponent
             type="fadeInFromLeft"
             duration="1000ms"
@@ -54,12 +54,12 @@ const Hero = () => {
             timing="ease"
             iteration="1"
             fillMode="none">
-            <h1 className='text-2xl md:leading-[90px] md:text-7xl text-[#fff] font-bold leading-tight'>
+            <h1 className='heading text-2xl md:leading-[90px] md:text-7xl text-[#164154] md:font-extrabold leading-tight'>
               Ohai Sanchari!
             </h1>
             </MovingComponent>
 
-            <div className='mt-[50px] hidden md:leading-[40px] md:text-[25px] md:block text-[#fff]'>
+            <div className='mt-[50px] hidden md:leading-[40px] md:font-semibold  md:text-[25px] md:block text-[#164154]'>
               
             <MovingComponent
               type="fadeInFromBottom"
@@ -70,12 +70,12 @@ const Hero = () => {
               iteration="1"
               fillMode="none">
 
-              <p className='text-justify tracking-wider'>
+              <p className='text-justify tracking-wider text-[27px]'>
                 I am SAGE, an author of your offbeat journeys.
               </p>
-              <p>As I narrate your fictional bucket list into reality let’s go on more</p>
-              <p>adventures, be around good people, learn new things and grow.</p>
-              React-Moving-Text
+              <p className=' text-[27px]'>As I narrate your fictional bucket list into reality let’s go on more</p>
+              <p className='text-[27px]'>adventures, be around good people, learn new things and grow.</p>
+              
             </MovingComponent>
             </div>
           </div>
