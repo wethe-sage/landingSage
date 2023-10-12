@@ -7,7 +7,7 @@ import { MdOutlineSchool, MdOutlineFestival } from "react-icons/md";
 import { AiOutlineSafety } from "react-icons/ai";
 import { BiTrip } from "react-icons/bi";
 import './recentTrip.css';
-import {GiPickOfDestiny} from "react-icons/gi";
+import {GiMagnifyingGlass} from "react-icons/gi";
 import {motion,useScroll, useTransform } from 'framer-motion';
 import "./recentTrip.css"
 const Services = () => {
@@ -88,8 +88,8 @@ const Services = () => {
           opacity:opacityProgess,
         }
       }
-    className='bg-gray-100 py-10 md:py-20 px-4 md:pl-[130px]'>
-      <div className='p-[45px] md:p-12'>
+    className='py-10 md:py-20 px-4 '>
+      <div className='p-[45px]  md:p-12'>
           <h1
             onMouseEnter={() => {
               textEnter();
@@ -99,7 +99,7 @@ const Services = () => {
               textLeave();
               setHeadingHovered(false);
             }}
-            className={`text-[40px] text-center font-bold md:text-center md:text-[55px] md:font-bold mt-4 md:mt-0 md:-mb-[80px] mb-6 ${
+            className={`heading text-[40px] text-center font-bold md:text-center md:text-[55px] md:font-bold text-[#164154] mt-4 md:mt-0 md:-mb-[80px] mb-6 ${
               headingHovered ? 'text-why-hovered' : ''
             }`}>
             What Services We Provide You?
@@ -114,7 +114,7 @@ const Services = () => {
             responsive={responsive}
           >
             <ServiceCard
-              image={<GiPickOfDestiny />}
+              image={<GiMagnifyingGlass />}
               name='Pick your itinerary'
               
               description='Choose your travel from the itineraries designed out of experience by your favorite travel Influencer just for you.'
@@ -149,10 +149,10 @@ const Services = () => {
               description='Get ready to witness exciting Indian festivals and events hosted by SAGE and embrace the seasons with the tribe you wish.'
             />
           </Carousel>
-        ) : (
-          <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-[50px] md:mt-[120px] pl-[30px]'>
+        ) : ( 
+          <div className='rounded-xl bg-[#164154] md:p-[50px] md:pl-[130px] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-[50px] md:mt-[120px]'>
             <ServiceCard
-              image={<GiPickOfDestiny />}
+              image={<GiMagnifyingGlass />}
               name='Pick your itinerary'
               
               description='Choose your travel from the itineraries designed out of experience by your favorite travel Influencer just for you.'
