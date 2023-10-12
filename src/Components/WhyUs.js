@@ -5,18 +5,10 @@ import './recentTrip.css';
 import { motion } from 'framer-motion';
 import {useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
-const WhyUs = () => {
-  const ref =useRef(null);
-  const {scrollYProgress}=useScroll({
-    target: ref,
-    offset:["0 1", "0.85 1"],
 
-  })
-  const scaleProgess =useTransform(scrollYProgress, [0, 1], [0.5,1]);
-  const opacityProgess =useTransform(scrollYProgress, [0, 1], [0.6,1]);
+const WhyUs = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [cursorVariant, setCursorVariant] = useState('default');
-  const [headingHovered, setHeadingHovered] = useState(false);
 
   useEffect(() => {
     if (window.innerWidth > 768) {
@@ -42,11 +34,11 @@ const WhyUs = () => {
       width: 120,
       x: mousePosition.x - 16,
       y: mousePosition.y - 16,
-      backgroundColor: '#bcad3c',
+      backgroundColor: 'white',
       mixBlendMode: 'difference',
-    },
+    }
   }
-  
+
   const textEnter = () => {
     setCursorVariant('text');
   };
@@ -54,58 +46,52 @@ const WhyUs = () => {
   const textLeave = () => {
     setCursorVariant('default');
   };
-
+const ref =useRef(null);
+  const {scrollYProgress}=useScroll({
+    target: ref,
+    offset:["0 1", "0.85 1"],
+  })
+  const scaleProgess =useTransform(scrollYProgress, [0, 1], [0.5,1]);
+  const opacityProgess =useTransform(scrollYProgress, [0, 1], [0.6,1]);
   return (
-    
-    <div className="bg-gray-100 py-10  px-4">
+    <div className="bg-gray-100 py-10 md:py-20 px-4">
       <h1
-        onMouseEnter={() => {
-          textEnter();
-          setHeadingHovered(true);
-        }}
-        onMouseLeave={() => {
-          textLeave();
-          setHeadingHovered(false);
-        }}
-        className={`heading text-[#164154] text-[40px]  text-center font-bold md:text-center md:text-[55px] md:font-bold mt-4 md:mt-0 md:mb-[60px]  mb-6 ${
-          headingHovered ? 'text-why-hovered' : '' 
-        }`}
+        onMouseEnter={textEnter}
+        onMouseLeave={textLeave}
+        className="text-2xl md:text-5xl lg:text-7xl text-center font-bold md:font-bold mt-4 md:mt-0 mb-6 md:mb-8"
       >
-        Why Choose SAGE?
+        Why Choose Us?
       </h1>
       {window.innerWidth > 768 && (
         <motion.div className="cursor" variants={variants} animate={cursorVariant} />
       )}
 
-      <div className="relative mt-[100px]">
+      <div className="relative mt-4">
         <img
           src={bg}
-          className="w-full h-[165px] md:h-[570px] rounded-lg opacity-90 brightness-[50%] bg-blue-500"
+          className="w-full h-[165px] md:h-[450px] opacity-90 brightness-[50%] bg-blue-500"
           alt="Background"
         />
-
         <motion.div  ref={ref}
-        style={{
+          style={{
               scale:scaleProgess,
               opacity:opacityProgess,
-            }} className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 md:translate-x-0 md:translate-y-0 md:top-[15%] md:left-[18%] md:w-[65%] md:rounded-xl md:h-auto md:bg-[#fff] md:p-8">
+            }} className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 md:translate-x-0 md:translate-y-0 md:top-[10%] md:left-1/4 md:w-[55%] md:rounded-xl md:h-auto md:bg-[#fff] md:p-8">
           <div className="flex gap-[70px]">
             <img
-              className="hidden lg:block md:mt-[10px] md:w-[350px] md:h-[300px]  md:flex items-center  md:rounded-xl"
               src={why}
               alt="Why Us Image"
+              className="hidden lg:block md:w-[350px] md:h-[300px] md:rounded-xl"
             />
-
-            <div className="mt-4 w-[300px] h-[100px] md:w-auto md:h-[320px]  overflow-auto md:mt-0 max-w-full md:max-w-xl">
-              <p className="text-base text-white md:text-[24px] md:text-justify leading-[30px] md:text-[#164154]">
-              If you feel overwhelmed by the demands of city life, your responsibilities, and the stresses of your job, it may be time to take a step back and prioritize your well-being. You deserve an opportunity to reconnect with your passions and gain a fresh perspective. Allow us to guide you on a journey into the heart of nature, where time slows down, and you can focus on self-care. Let go of all that is holding you back from the things you love and discover your inner wisdom. Become "The Sage" and live the life you truly deserve.
+            <div className=" w-[380px] h-[100px] md:w-auto md:h-[310px] overflow-auto -mt-[50px] -ml-[130px] md:mt-0 max-w-full md:max-w-xl">
+              <p className="text-base text-white md:text-[19px] lg:text-[19px]  md:text-justify md:leading-[30px] md:text-[#000000]">
+                Your gateway to transformative travel! We redefine Gen-Z journeys, offering budget-friendly, offbeat adventures for personal growth and connection. Escape academic pressures and social media comparisons with SAGE's curated experiences. Explore, learn, and grow with us. Welcome to SAGE, where every destination is a classroom and every adventure a life lesson.
               </p>
             </div>
           </div>
         </motion.div>
       </div>
     </div>
-  
   );
 };
 

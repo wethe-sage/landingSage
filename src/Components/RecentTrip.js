@@ -57,14 +57,14 @@ const RecentTrip = () => {
         variants={variants}
         animate={cursorVariant}
         />
-        <p className='titel heading text-[30px] text-gray-500 relative text-center font-extrabold mb-[70px]'>
+        <p className='titel heading text-[30px] text-[#164154]  relative text-center font-extrabold mb-[70px]'>
           Adventures fill your soul with stories
         </p>
         </div>
 
         <div className='destination mb-[100px] ml-[50px] mr-[50px] flex items-center justify-between '>
           <div className='destiText w-[45%] text-start text-[20px] '>
-            <h1 className='heading text-4xl font-bold text-black mb-[30px] pb-[10px] '>Sakleshpura, Karnataka</h1>
+            <h1 className='heading text-4xl font-bold text-[#164154]  mb-[30px] pb-[10px] '>Sakleshpura, Karnataka</h1>
             <p
               className={`text-justify font-light ${showFullText ? 'block' : 'max-h-[380px] overflow-hidden'}`}
             >

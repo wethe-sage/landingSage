@@ -54,12 +54,12 @@ const Hero = () => {
             timing="ease"
             iteration="1"
             fillMode="none">
-            <h1 className='heading text-2xl md:leading-[90px] md:text-7xl text-[#164154] md:font-extrabold leading-tight'>
-              Ohai Sanchari!
+            <h1 className='heading ml-[30px] font-bold text-4xl md:leading-[90px] md:text-7xl text-[#164154] md:font-extrabold leading-tight'>
+              Ohai <span className='text-[#f0df5c]'>Sanchari!</span>
             </h1>
             </MovingComponent>
 
-            <div className='mt-[50px] hidden md:leading-[40px] md:font-semibold  md:text-[25px] md:block text-[#164154]'>
+            <div className='mt-[50px] hidden md:leading-[40px] md:text-[25px] md:block text-[#164154]'>
               
             <MovingComponent
               type="fadeInFromBottom"
@@ -70,11 +70,11 @@ const Hero = () => {
               iteration="1"
               fillMode="none">
 
-              <p className='text-justify tracking-wider text-[27px]'>
+              <p className='text-justify tracking-wider text-[26px]'>
                 I am SAGE, an author of your offbeat journeys.
               </p>
-              <p className=' text-[27px]'>As I narrate your fictional bucket list into reality let’s go on more</p>
-              <p className='text-[27px]'>adventures, be around good people, learn new things and grow.</p>
+              <p className=' text-[26px]'>As I narrate your fictional bucket list into reality let’s go on more</p>
+              <p className='text-[26px]'>adventures, be around good people, learn new things and grow.</p>
               
             </MovingComponent>
             </div>

@@ -89,7 +89,7 @@ const TravelChange = () => {
           style={{
               scale:scaleProgess,
               opacity:opacityProgess,
-            }} className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 md:translate-x-0 md:translate-y-0 md:top-[15%] md:left-[18%] md:w-[65%] md:rounded-xl md:h-auto md:bg-[#fff] md:p-8'>
+            }} className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 md:translate-x-0 md:translate-y-0 md:top-[15%] md:left-[15%] md:w-[73%] md:rounded-xl md:h-auto md:bg-[#fff] md:p-8'>
            <div className='flex gap-[70px]'>
             <img
               className='hidden lg:block md:mt-0 md:w-[350px] md:h-[330px] md:rounded-xl object-cover'
@@ -97,8 +97,8 @@ const TravelChange = () => {
               alt='Why Us Image'
             />
           
-          <div className='mt-4 w-[300px] h-[100px] md:w-auto md:h-[340px] overflow-auto md:mt-0 max-w-full md:max-w-xl '>
-          <p className='text-base text-white md:text-[24px] md:text-justify leading-[30px] md:text-[#164154]'>
+          <div className=" w-[380px] h-[100px] md:w-auto md:h-[310px] overflow-auto -mt-[50px] -ml-[130px] md:mt-0 max-w-full md:max-w-xl">
+          <p className='text-base text-white md:text-[24px] md:text-justify md:leading-[35px] md:text-[#164154]'>
           Travel has the power to transform people in profound and meaningful ways. It exposes us to new cultures, challenges us, and helps us grow. Through travel, we gain a deeper appreciation for the diversity that exists around us and learn to be more open-minded and adaptable. We discover passions and interests we never knew we had and find a sense of purpose and direction in life. Travel changes us, and it's a journey that can never be forgotten.
           </p>
           </div>

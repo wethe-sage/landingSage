@@ -22,7 +22,7 @@
 
   
 .cursor{
-    background-color: #111;
+    background-color: #164154;
     height: 32px;
     width: 32px;
     border-radius: 50%;
@@ -31,3 +31,7 @@
     left: 0;
     pointer-events: none;
 }
+.text-why-hovered {
+    color: #bcad3c;
+  }
+  

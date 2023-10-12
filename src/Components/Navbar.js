@@ -17,12 +17,12 @@ const Navbar = () => {
           <ul 
             className='flex gap-3 p-[10px] justify-center align-baseline'>
             <li>
-              <Link to='/about' className='text-lg font-semibold ' >
+              <Link to='/about' className='text-lg text-[#164154] font-semibold ' >
                 About Us
               </Link>
             </li>
             <li>
-              <Link to='/contact' className='text-lg font-semibold' >
+              <Link to='/contact' className='text-lg text-[#164154] font-semibold' >
                 Contact
               </Link>
             </li>
