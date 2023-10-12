@@ -7,6 +7,7 @@ import TravelChange from "./TravelChange";
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useEffect } from 'react';
+import MovingComponent from 'react-moving-text'
 
 const boxVariants = {
   visible: { opacity: 1, scale: 1, x: 0, transition: { duration: 0.5 } },
@@ -41,36 +42,48 @@ const Hero = () => {
   
   return (
     <div>
-      <motion.div
-        className='box'
-        variants={boxVariants}
-        initial='hidden'
-        animate={control}
-        ref={ref} 
-      >
+      
         <div className='relative'>
           <img src={hero} className='w-full h-auto' alt='Hero Image' />
           <div className='absolute top-1/4 left-[28%] md:top-[40%] transform -translate-x-1/2 -translate-y-1/2'>
+          <MovingComponent
+            type="fadeInFromLeft"
+            duration="1000ms"
+            delay="1s"
+            direction="normal"
+            timing="ease"
+            iteration="1"
+            fillMode="none">
             <h1 className='text-2xl md:leading-[90px] md:text-7xl text-[#fff] font-bold leading-tight'>
               Ohai Sanchari!
-              <br />
             </h1>
+            </MovingComponent>
 
             <div className='mt-[50px] hidden md:leading-[40px] md:text-[25px] md:block text-[#fff]'>
+              
+            <MovingComponent
+              type="fadeInFromBottom"
+              duration="1000ms"
+              delay="0s"
+              direction="normal"
+              timing="ease"
+              iteration="1"
+              fillMode="none">
+
               <p className='text-justify tracking-wider'>
                 I am SAGE, an author of your offbeat journeys.
               </p>
               <p>As I narrate your fictional bucket list into reality let’s go on more</p>
               <p>adventures, be around good people, learn new things and grow.</p>
-              <p></p>
+              React-Moving-Text
+            </MovingComponent>
             </div>
           </div>
         </div>
-        </motion.div>
-        <Services />
-        <RecentTrip />
-        <WhyUs />
-        <TravelChange />
+        <div><Services /></div>
+        <div> <RecentTrip /></div>
+        <div><WhyUs /></div>
+        <div><TravelChange /></div>
       
     </div>
   );
