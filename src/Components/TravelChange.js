@@ -3,6 +3,8 @@ import change from "./Asset/change.jpg"
 import bg from './Asset/bg.jpg';
 import './recentTrip.css';
 import { motion } from 'framer-motion';
+import {useScroll, useTransform } from 'framer-motion';
+import { useRef } from 'react';
 
 const TravelChange = () => {
   const [showFullText, setShowFullText] = useState(true);
@@ -39,7 +41,7 @@ const TravelChange = () => {
       width: 120,
       x: mousePosition.x - 16,
       y: mousePosition.y - 16,
-      backgroundColor: 'white',
+      backgroundColor: '#bcad3c',
       mixBlendMode: 'difference',
     }
   };
@@ -56,6 +58,14 @@ const TravelChange = () => {
     }
   };
 
+  const ref =useRef(null);
+  const {scrollYProgress}=useScroll({
+    target: ref,
+    offset:["0 1", "0.85 1"],
+  })
+  const scaleProgess =useTransform(scrollYProgress, [0, 1], [0.5,1]);
+  const opacityProgess =useTransform(scrollYProgress, [0, 1], [0.6,1]);
+  
   return (
     <div className='bg-gray-100 py-10 px-4'>
       <h1 onMouseEnter={textEnter} onMouseLeave={textLeave}   className="text-[40px] text-center font-bold md:text-center text-[#164154]  md:text-[55px] md:font-bold mt-4 md:mt-0 md:-mb-[80px] mb-6">
@@ -75,8 +85,12 @@ const TravelChange = () => {
           alt='Background'
         />
 
-        <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 md:translate-x-0 md:translate-y-0 md:top-[15%] md:left-[18%] md:w-[65%] md:rounded-xl md:h-auto md:bg-[#fff] md:p-8'>
-          <div className='flex gap-[70px]'>
+        <motion.div  ref={ref}
+          style={{
+              scale:scaleProgess,
+              opacity:opacityProgess,
+            }} className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 md:translate-x-0 md:translate-y-0 md:top-[15%] md:left-[18%] md:w-[65%] md:rounded-xl md:h-auto md:bg-[#fff] md:p-8'>
+           <div className='flex gap-[70px]'>
             <img
               className='hidden lg:block md:mt-0 md:w-[350px] md:h-[330px] md:rounded-xl object-cover'
               src={change}
@@ -89,7 +103,7 @@ const TravelChange = () => {
           </p>
           </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
