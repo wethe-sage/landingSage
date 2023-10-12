@@ -17,7 +17,6 @@ const TravelChange = () => {
   const [cursorVariant, setCursorVariant] = useState('default');
 
   useEffect(() => {
-    // Check if the screen width is greater than a certain threshold (e.g., 768 pixels for tablets)
     if (window.innerWidth > 768) {
       const mouseMove = (e) => {
         setMousePosition({ x: e.clientX, y: e.clientY });
@@ -58,8 +57,8 @@ const TravelChange = () => {
   };
 
   return (
-    <div className='bg-gray-100 py-10 md:py-20 px-4'>
-      <h1 onMouseEnter={textEnter} onMouseLeave={textLeave} className='text-[45px] md:text-5xl lg:text-7xl text-center mb-6 md:mb-12 font-bold'>
+    <div className='bg-gray-100 py-10 px-4'>
+      <h1 onMouseEnter={textEnter} onMouseLeave={textLeave}   className="text-[40px] text-center font-bold md:text-center text-[#164154]  md:text-[55px] md:font-bold mt-4 md:mt-0 md:-mb-[80px] mb-6">
         How Travel Changes People?
       </h1>
       {window.innerWidth > 768 && (
@@ -72,21 +71,21 @@ const TravelChange = () => {
       <div className='relative mt-[100px]'>
         <img
           src={bg}
-          className='w-full h-[165px] md:h-[440px] opacity-90 brightness-[50%] bg-blue-500'
+          className='w-full h-[165px] md:h-[570px] rounded-lg opacity-90 brightness-[50%] bg-blue-500'
           alt='Background'
         />
 
-        <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 md:translate-x-0 md:translate-y-0 md:top-[10%] md:left-1/4 md:w-[55%] md:rounded-xl md:h-auto md:bg-[#fff] md:p-8'>
+        <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 md:translate-x-0 md:translate-y-0 md:top-[15%] md:left-[18%] md:w-[65%] md:rounded-xl md:h-auto md:bg-[#fff] md:p-8'>
           <div className='flex gap-[70px]'>
             <img
-              className='hidden lg:block md:mt-0 md:w-[350px] md:h-[300px] md:rounded-xl object-cover'
+              className='hidden lg:block md:mt-0 md:w-[350px] md:h-[330px] md:rounded-xl object-cover'
               src={change}
               alt='Why Us Image'
             />
           
-          <div className='mt-4 w-[300px] h-[100px] md:w-auto md:h-[310px] overflow-auto md:mt-0 max-w-full md:max-w-xl '>
-          <p className='text-base text-white md:text-xl lg:text-xl md:text-justify md:text-[#000000]'>
-          Traveling is a wonderful hobby for millions of people across the globe. It also provides various advantages to people. Here's why traveling is important: The ability to move from one place to another is a remarkable human virtue. We have the extraordinary privilege of seeing, experiencing, and learning from our travels, making them satisfying and enriching.
+          <div className='mt-4 w-[300px] h-[100px] md:w-auto md:h-[340px] overflow-auto md:mt-0 max-w-full md:max-w-xl '>
+          <p className='text-base text-white md:text-[24px] md:text-justify leading-[30px] md:text-[#000000]'>
+          Travel has the power to transform people in profound and meaningful ways. It exposes us to new cultures, challenges us, and helps us grow. Through travel, we gain a deeper appreciation for the diversity that exists around us and learn to be more open-minded and adaptable. We discover passions and interests we never knew we had and find a sense of purpose and direction in life. Travel changes us, and it's a journey that can never be forgotten.
           </p>
           </div>
           </div>

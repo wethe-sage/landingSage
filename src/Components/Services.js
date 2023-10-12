@@ -12,8 +12,16 @@ import { AiOutlineSafety } from "react-icons/ai";
 import { BiSupport, BiTrip } from "react-icons/bi";
 import './recentTrip.css';
 import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+import {useAnimation} from 'framer-motion';
 
-const Services = () => {
+
+const boxVariants = {
+  visible: { opacity: 1, scale: 1, x: 0, transition: { duration: 0.5 } },
+  hidden: { opacity: 0, scale: 0, x: 200 },
+};
+
+const Services = ({num}) => {
   const isMobileOrTablet = window.innerWidth <= 1024;
 
   const responsive = {
@@ -77,9 +85,15 @@ const Services = () => {
   return (
     <div className='bg-gray-100 py-10 md:py-20 px-4'>
       <div className='p-[45px] md:p-12'>
-        <h1 onMouseEnter={textEnter} onMouseLeave={textLeave} className='text-[25px] text-center md:text-5xl lg:text-7xl md:font-bold font-semibold mt-4 md:mt-0 mb-6 md:mb-[50px]'>
+        <h1 onMouseEnter={textEnter} onMouseLeave={textLeave} className='text-[25px] text-[#164154] text-center md:text-[55px]  md:font-bold font-semibold mt-4 md:mt-0 mb-6 md:mb-[50px]'>
           What Services We Provide You?
         </h1>
+        <motion.div
+          className='box'
+          variants={boxVariants}
+          initial='hidden'
+          animate='visible'
+        >
         {isMobileOrTablet ? (
           <Carousel
             swipeable={true}
@@ -89,89 +103,82 @@ const Services = () => {
           >
             <ServiceCard
               image={<FaUserCircle />}
-              name='Travel Guide'
-              description='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.'
+              name='Pick your itinerary'
+              num={num}
+              description='Choose your travel from the itineraries designed out of experience by your favorite travel Influencer just for you.'
             />
             <ServiceCard
               image={<LiaHotelSolid />}
-              name='Hotel Bookings'
-              description='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.'
+              name='Off-beaten Path'
+              num={num}
+              description=' Ever wondered how 200 km away from the city would be? Brace yourself to explore the uncharted with SAGE, exclusive for your offbeat travels..'
             />
             <ServiceCard
               image={<MdOutlineSchool />}
-              name='Travel Scholarships'
-              description='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.'
+              name='Build lasting bonds'
+              num={num}
+              description='Away from parties? SAGE Club is just the right place for all your cheap thrills right from 1 AM drives to Sunset watching, join SAGE Club for more.'
             />
             <ServiceCard
               image={<MdOutlineDiscount />}
-              name='A lot of Discounts'
-              description='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.'
-            />
-            <ServiceCard
-              image={<AiOutlineSafety />}
-              name='Travel Insurance'
-              description='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.'
-            />
-            <ServiceCard
-              image={<BiSupport />}
-              name='Support 24/7'
-              description='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.'
+              name='Safety'
+              num={num}
+              description='Scared of Solo-Travel? Give yourself a journey that you deserve accompanied by SAGE with utmost safety and fun along the way.'
             />
             <ServiceCard
               image={<BiTrip />}
-              name='Corporate Trips'
-              description='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.'
+              name='Travel Scholarship'
+              num={num}
+              description=' Sign up for upcoming competitions and get a chance to win 100% sponsorships on your next journey.'
             />
             <ServiceCard
               image={<FaHandshake />}
-              name='Reliable Tour'
-              description='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.'
+              name='Festivals and Events'
+              num={num}
+              description='Get ready to witness exciting Indian festivals and events hosted by SAGE and embrace the seasons with the tribe you wish.'
             />
           </Carousel>
         ) : (
-          <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'>
+          <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 pl-[70px]'>
             <ServiceCard
               image={<FaUserCircle />}
-              name='Travel Guide'
-              description='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.'
+              name='Pick your itinerary:'
+              num={num}
+              description='Choose your travel from the itineraries designed out of experience by your favorite travel Influencer just for you.'
             />
             <ServiceCard
               image={<LiaHotelSolid />}
-              name='Hotel Bookings'
-              description='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.'
+              name='Off-beaten Path'
+              num={num}
+              description=' Ever wondered how 200 km away from the city would be? Brace yourself to explore the uncharted with SAGE, exclusive for your offbeat travels..'
             />
             <ServiceCard
               image={<MdOutlineSchool />}
-              name='Travel Scholarships'
-              description='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.'
+              name='Build lasting bonds'
+              num={num}
+              description='Away from parties? SAGE Club is just the right place for all your cheap thrills right from 1 AM drives to Sunset watching, join SAGE Club for more.'
             />
             <ServiceCard
               image={<MdOutlineDiscount />}
-              name='A lot of Discounts'
-              description='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.'
-            />
-            <ServiceCard
-              image={<AiOutlineSafety />}
-              name='Travel Insurance'
-              description='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.'
-            />
-            <ServiceCard
-              image={<BiSupport />}
-              name='Support 24/7'
-              description='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.'
+              name='Safety'
+              num={num}
+              description='Scared of Solo-Travel? Give yourself a journey that you deserve accompanied by SAGE with utmost safety and fun along the way.'
             />
             <ServiceCard
               image={<BiTrip />}
-              name='Corporate Trips'
-              description='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.'
+              num={num}
+              name='Travel Scholarship'
+              description=' Sign up for upcoming competitions and get a chance to win 100% sponsorships on your next journey.'
             />
             <ServiceCard
               image={<FaHandshake />}
-              name='Reliable Tour'
-              description='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.'
+              num={num}
+              name='Festivals and Events'
+              description='Get ready to witness exciting Indian festivals and events hosted by SAGE and embrace the seasons with the tribe you wish.'
             />
           </div>
         )}
+        </motion.div>
       </div>
       {window.innerWidth > 768 && (
         <motion.div

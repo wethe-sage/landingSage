@@ -1,10 +1,9 @@
 import React from 'react';
 import logo from '../Components/Asset/logo.png';
-import { BiLogoGmail } from 'react-icons/bi';
 import { IoIosCall } from 'react-icons/io';
 import { BsInstagram, BsYoutube, BsLinkedin } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
-
+import icong from '../Components/Asset/icons.png';
 const Footer = () => {
   const handleBtn = () => {
     alert('Thank you for Subscribing');
@@ -12,33 +11,34 @@ const Footer = () => {
 
   return (
     <div>
-      <div className='flex flex-col md:flex-row justify-between items-center pl-[20px] pr-[20px] pb-[20px] md:pl-[100px] md:pr-[100px] md:pb-[100px] bg-slate-200'>
-        <div className='flex flex-col gap-[15px] justify-start items-start m-[20px]'>
-         <Link to={"/"}><img className='h-[180px] w-full md:-ml-[40px]' src={logo} alt='Logo' /></Link> 
+      <div className='flex flex-col md:flex-row justify-between items-center pl-[20px] pr-[20px] pb-[20px] md:pl-[100px] md:pr-[100px] md:pb-[100px] bg-[#164154]'>
+        <div className='flex flex-col gap-[20px] justify-start items-start mt-[20px]'>
+         <Link to={"/"}><img className='h-[90px] w-full md:-ml-[10px]' src={logo} alt='Logo' /></Link> 
+         <div className='flex flex-col gap-[20px] mt-[50px]'>
           <a
             type='mail'
-            className='flex items-center gap-[10px]'
+            className='flex items-center text-lg text-white gap-[10px]'
             href='mailto:explore.sage@gmail.com'
             target='_blank'
             rel='noreferrer'>
               
             <span className='text-2xl text-red-500'>
-              <BiLogoGmail />
+              <img className='h-[30px]' src={icong}></img>
             </span>
-            explore.sage@gmail.com
+            info@wethesage.com
           </a>
-          <p className='flex gap-[10px] items-center'>
+          <a className='flex gap-[10px] text-white text-lg items-center'  href='tel:+917989909734'>
             <span className='text-2xl text-blue-500'>
               <IoIosCall />
             </span>
-            +91 9384176373
-          </p>
-
+            +91 7989909734
+          </a>
+          </div>
           <div className='flex gap-[10px]'>
             <ul className='flex gap-[30px]'>
               <li className='text-2xl text-pink-700'>
                 <a
-                  href='https://www.instagram.com/'
+                  href='https://www.instagram.com/we.the_sage/'
                   target='_blank'
                   rel='noreferrer'
                 >
@@ -67,25 +67,25 @@ const Footer = () => {
           </div>
         </div>
         <div className='mt-[10px] hidden md:block md:mt-0'>
-          <h1 className=' text-2xl font-bold mb-[30px] mt-[40px]'>
+          <h1 className=' text-4xl text-[#bcad3c] font-bold mb-[30px] mt-[40px]'>
             Quick Links
           </h1>
 
           <ul className='flex flex-col gap-[10px]'>
             {/* <li className='text-sm text-gray-500'>Home</li>
             <li className='text-sm text-gray-500'>Services</li> */}
-            <Link to='/about'className='text-sm text-gray-500'>About Us </Link>
-            <Link to='/contact' className='text-sm text-gray-500'>Contact</Link>
+            <Link to='/about'className='text-lg text-white'>About Us </Link>
+            <Link to='/contact' className='text-lg text-white'>Contact</Link>
           </ul>
         </div>
 
-        <div className='bg-white flex flex-col md:flex-row p-[20px] rounded-xl'>
-        <div className='md:w-[300px]'>
-            <h1 className='Title text-[30px] text-black'>
-            Subscribe To Get Our Newsletter
+        <div className='bg-white flex flex-col md:flex-row p-[20px] mt-[100px] rounded-xl'>
+        <div className='md:w-[300px] '>
+            <h1 className='Title text-[30px] font-bold text-[#164154]'>
+            Join Our Newsletter
             </h1>
-            <p className='description text-[15px] font-thin text-gray-500 mt-[10px] mb-[20px]'>
-            Get e-mail updates about latest updates and special offers.
+            <p className='description text-[15px] font-normal text-gray-500 mt-[10px] mb-[20px]'>
+            For our upcoming trips, blogs on transformative travel, exciting discounts and more.
             </p>
         </div>
         
@@ -102,7 +102,7 @@ const Footer = () => {
             />
             <button
             type='submit'
-            className='btn p-2 border border-white text-white bg-blue-500 rounded-r-md mt-[10px] md:mt-0'
+            className='btn p-2 border border-white text-white bg-[#bcad3c] rounded-r-md mt-[10px] md:mt-0'
             onClick={handleBtn}
             >
             Subscribe

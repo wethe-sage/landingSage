@@ -1,4 +1,4 @@
-import logo from './Asset/logo.png';
+import logohero from './Asset/logohero.png';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
@@ -9,7 +9,7 @@ const Navbar = () => {
       <div className='flex h-[70px] shadow-2xl justify-between items-center bg-slate-200'>
         <div>
           <Link to='/'>
-          <img src={logo} alt='logo' className='h-[100px]'></img>
+          <img src={logohero} alt='logo' className='h-[100px]'></img>
           </Link>
         </div>
         
