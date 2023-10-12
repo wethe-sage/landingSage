@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
-// import how from './Asset/how.jpeg';
+import React, { useState, useEffect } from 'react';
 import change from "./Asset/change.jpg"
 import bg from './Asset/bg.jpg';
+import './recentTrip.css';
+import { motion } from 'framer-motion';
+
 const TravelChange = () => {
   const [showFullText, setShowFullText] = useState(true);
 
@@ -9,12 +11,65 @@ const TravelChange = () => {
     setShowFullText(!showFullText);
   };
 
+  const isMobileOrTablet = window.innerWidth <= 1024;
+
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [cursorVariant, setCursorVariant] = useState('default');
+
+  useEffect(() => {
+    // Check if the screen width is greater than a certain threshold (e.g., 768 pixels for tablets)
+    if (window.innerWidth > 768) {
+      const mouseMove = (e) => {
+        setMousePosition({ x: e.clientX, y: e.clientY });
+      };
+
+      window.addEventListener('mousemove', mouseMove);
+      return () => {
+        window.removeEventListener('mousemove', mouseMove);
+      };
+    }
+  }, []);
+
+  const variants = {
+    default: {
+      x: mousePosition.x,
+      y: mousePosition.y,
+    },
+    text: {
+      height: 120,
+      width: 120,
+      x: mousePosition.x - 16,
+      y: mousePosition.y - 16,
+      backgroundColor: 'white',
+      mixBlendMode: 'difference',
+    }
+  };
+
+  const textEnter = () => {
+    if (window.innerWidth > 768) {
+      setCursorVariant('text');
+    }
+  };
+
+  const textLeave = () => {
+    if (window.innerWidth > 768) {
+      setCursorVariant('default');
+    }
+  };
+
   return (
     <div className='bg-gray-100 py-10 md:py-20 px-4'>
-      <h1 className='text-3xl md:text-5xl lg:text-7xl text-center mb-6 md:mb-12 font-bold'>
+      <h1 onMouseEnter={textEnter} onMouseLeave={textLeave} className='text-[45px] md:text-5xl lg:text-7xl text-center mb-6 md:mb-12 font-bold'>
         How Travel Changes People?
       </h1>
-      <div className='relative'>
+      {window.innerWidth > 768 && (
+        <motion.div
+          className='cursor'
+          variants={variants}
+          animate={cursorVariant}
+        />
+      )}
+      <div className='relative mt-[100px]'>
         <img
           src={bg}
           className='w-full h-[165px] md:h-[440px] opacity-90 brightness-[50%] bg-blue-500'

@@ -14,7 +14,7 @@ const Footer = () => {
     <div>
       <div className='flex flex-col md:flex-row justify-between items-center pl-[20px] pr-[20px] pb-[20px] md:pl-[100px] md:pr-[100px] md:pb-[100px] bg-slate-200'>
         <div className='flex flex-col gap-[15px] justify-start items-start m-[20px]'>
-          <img className='h-[180px] w-full md:-ml-[40px]' src={logo} alt='Logo' />
+         <Link to={"/"}><img className='h-[180px] w-full md:-ml-[40px]' src={logo} alt='Logo' /></Link> 
           <a
             type='mail'
             className='flex items-center gap-[10px]'

@@ -49,7 +49,7 @@ const RecentTrip = () => {
   }
   return (
     <>
-      <div className='recentTrip mt-[100px]'>
+      <div className='recentTrip'>
         <h1 onMouseEnter={textEnter} onMouseLeave={textLeave} className='text-[45px] hover:text-white  md:text-5xl lg:text-7xl md:mb-4 relative text-center font-extrabold'>Our Recent Trip</h1>
         <motion.div
         className='cursor'
@@ -65,7 +65,7 @@ const RecentTrip = () => {
           <div className='destiText w-[45%] text-start text-[20px] '>
             <h1 className='text-4xl font-bold text-black mb-[30px] pb-[10px] '>Sakleshpura, Karnataka</h1>
             <p
-              className={`text-justify font-light ${showFullText ? 'block' : 'max-h-[200px] overflow-hidden'}`}
+              className={`text-justify font-light ${showFullText ? 'block' : 'max-h-[380px] overflow-auto'}`}
             >
               The story recounts a spontaneous journey to Sakleshpura in the Western Ghats, driven by a curiosity to
               explore. Hindered by weak BSNL 5G, the traveler seeks interactions with locals for waterfall directions.
