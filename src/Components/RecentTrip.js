@@ -51,20 +51,20 @@ const RecentTrip = () => {
     <>
       <div className='recentTrip '>
         <div className='flex flex-col gap-[70px]'>
-        <h1 onMouseEnter={textEnter} onMouseLeave={textLeave} className='text-[40px] text-center font-bold md:text-center md:text-[55px] text-[#164154] md:font-bold mt-4 md:mt-0 md:-mb-[80px]'>Our Recent Trip</h1>
+        <h1 onMouseEnter={textEnter} onMouseLeave={textLeave} className='text-[40px] heading text-center font-bold md:text-center md:text-[55px] text-[#164154] md:font-bold mt-4 md:mt-0 md:-mb-[80px]'>Our Recent Trip</h1>
         <motion.div
         className='cursor'
         variants={variants}
         animate={cursorVariant}
         />
-        <p className='titel text-[30px] text-gray-500 relative text-center font-extrabold mb-[70px]'>
+        <p className='titel heading text-[30px] text-gray-500 relative text-center font-extrabold mb-[70px]'>
           Adventures fill your soul with stories
         </p>
         </div>
 
         <div className='destination mb-[100px] ml-[50px] mr-[50px] flex items-center justify-between '>
           <div className='destiText w-[45%] text-start text-[20px] '>
-            <h1 className='text-4xl font-bold text-black mb-[30px] pb-[10px] '>Sakleshpura, Karnataka</h1>
+            <h1 className='heading text-4xl font-bold text-black mb-[30px] pb-[10px] '>Sakleshpura, Karnataka</h1>
             <p
               className={`text-justify font-light ${showFullText ? 'block' : 'max-h-[380px] overflow-hidden'}`}
             >
