@@ -57,7 +57,7 @@ const RecentTrip = () => {
         variants={variants}
         animate={cursorVariant}
         />
-        <p className='titel heading text-[30px] text-[#164154]  relative text-center font-extrabold mb-[70px]'>
+        <p className='titel heading text-[30px] text-[#a5a7a8]  relative text-center font-extrabold mb-[70px]'>
           Adventures fill your soul with stories
         </p>
         </div>
@@ -66,7 +66,7 @@ const RecentTrip = () => {
           <div className='destiText w-[45%] text-start text-[20px] '>
             <h1 className='heading text-4xl font-bold text-[#164154]  mb-[30px] pb-[10px] '>Sakleshpura, Karnataka</h1>
             <p
-              className={`text-justify font-light ${showFullText ? 'block' : 'max-h-[380px] overflow-hidden'}`}
+              className={`text-justify font-light subHeading text-[#164154] ${showFullText ? 'block' : 'max-h-[380px] overflow-hidden'}`}
             >
               The story recounts a spontaneous journey to Sakleshpura in the Western Ghats, driven by a curiosity to
               explore. Hindered by weak BSNL 5G, the traveler seeks interactions with locals for waterfall directions.
