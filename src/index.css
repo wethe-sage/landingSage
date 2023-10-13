@@ -3,11 +3,20 @@
 @tailwind utilities;
 
 
-@import url('https://fonts.googleapis.com/css2?family=Alata&family=Open+Sans:ital,wght@1,500&family=Poppins:wght@100;200;300;500;600&family=Quicksand:wght@600;700&family=Raleway:wght@100;200&display=swap');
 .heading{
-    font-family: 'Alata', sans-serif;
+    font-family: 'TTCmmnsPrCndDmBld', sans-serif;
 font-family: 'Open Sans', sans-serif;
 font-family: 'Poppins', sans-serif;
 font-family: 'Quicksand', sans-serif;
 font-family: 'Raleway', sans-serif;
 }
+
+
+.subHeading{
+    font-family: 'TT Interfaces', sans-serif;
+font-family: 'Open Sans', sans-serif;
+font-family: 'Poppins', sans-serif;
+font-family: 'Quicksand', sans-serif;
+font-family: 'Raleway', sans-serif;
+}
+
