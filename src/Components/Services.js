@@ -39,9 +39,9 @@ const Services = () => {
     }
   };
 
+  
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [cursorVariant, setCursorVariant] = useState('default');
-  const [headingHovered, setHeadingHovered] = useState(false);
 
   useEffect(() => {
     if (window.innerWidth > 768) {
@@ -50,7 +50,6 @@ const Services = () => {
       };
 
       window.addEventListener('mousemove', mouseMove);
-
       return () => {
         window.removeEventListener('mousemove', mouseMove);
       };
@@ -69,15 +68,19 @@ const Services = () => {
       y: mousePosition.y - 16,
       backgroundColor: '#bcad3c',
       mixBlendMode: 'difference',
-    },
-  }
-  
+    }
+  };
+
   const textEnter = () => {
-    setCursorVariant('text');
+    if (window.innerWidth > 768) {
+      setCursorVariant('text');
+    }
   };
 
   const textLeave = () => {
-    setCursorVariant('default');
+    if (window.innerWidth > 768) {
+      setCursorVariant('default');
+    }
   };
 
   return (
@@ -89,22 +92,15 @@ const Services = () => {
         }
       }
     className='py-10 md:py-20 px-4 '>
-      <div className='p-[45px]  md:p-12'>
-          <h1
-            onMouseEnter={() => {
-              textEnter();
-              setHeadingHovered(true);
-            }}
-            onMouseLeave={() => {
-              textLeave();
-              setHeadingHovered(false);
-            }}
-            className={`heading text-[40px] text-center font-bold md:text-center md:text-[55px] md:font-bold text-[#164154] mt-4 md:mt-0 md:-mb-[80px] mb-6 ${
-              headingHovered ? 'text-why-hovered' : ''
-            }`}>
+      
+      <div className='p-[45px] md:p-12 select-none '>
+        <div> 
+        
+         <h1 onMouseEnter={textEnter} onMouseLeave={textLeave} className='heading text-[40px] text-center font-bold md:text-center md:text-[55px] md:font-bold text-[#164154] mt-4 md:mt-0 md:-mb-[80px] mb-6'>
             What Services We Provide You?
-          </h1>
-
+         </h1>
+          
+          </div>
         
         {isMobileOrTablet ? (
           <Carousel
@@ -151,6 +147,13 @@ const Services = () => {
           </Carousel>
         ) : ( 
           <div className='rounded-xl bg-[#164154] md:p-[50px] md:pl-[130px] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-[50px] md:mt-[120px]'>
+            {window.innerWidth > 768 && (
+        <motion.div
+          className='cursor'
+          variants={variants}
+          animate={cursorVariant}
+        />
+      )}
             <ServiceCard
               image={<GiMagnifyingGlass />}
               name='Pick your itinerary'
