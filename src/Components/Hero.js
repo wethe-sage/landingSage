@@ -47,36 +47,38 @@ const Hero = () => {
           <img src={hero} className='w-full h-auto' alt='Hero Image' />
           <div className='absolute top-1/4 left-[30%] md:top-[40%] transform -translate-x-1/2 -translate-y-1/2'>
           <MovingComponent
-            type="fadeInFromLeft"
+            type="slideInFromBottom"
             duration="1000ms"
             delay="1s"
             direction="normal"
             timing="ease"
             iteration="1"
             fillMode="none">
-            <h1 className='heading ml-[30px] font-bold text-4xl md:leading-[90px] md:text-7xl text-[#164154] md:font-extrabold leading-tight'>
-              Ohai <span className='text-[#f0df5c]'>Sanchari!</span>
+            <h1 className='heading ml-[0px] font-bold text-4xl flex items-baseline md:leading-[90px] md:text-7xl text-[#164154] md:font-extrabold leading-tight'>
+             Ohai <span className='text-[#f0df5c]'>Sanchari!</span>
             </h1>
             </MovingComponent>
 
             <div className='mt-[50px] hidden md:leading-[40px] md:text-[25px] md:block text-[#164154]'>
-              
+           
             <MovingComponent
-              type="fadeInFromBottom"
-              duration="1000ms"
-              delay="0s"
-              direction="normal"
-              timing="ease"
-              iteration="1"
-              fillMode="none">
+            type="slideInFromLeft"
+            duration="1000ms"
+            delay="3s"
+            direction="normal"
+            timing="ease"
+            iteration="1"
+            fillMode="none">
 
               <p className='text-justify tracking-wider text-[26px]'>
-                I am SAGE, an author of your offbeat journeys.
+                I am SAGE, the author of your offbeat journeys.
               </p>
-              <p className=' text-[26px]'>As I narrate your fictional bucket list into reality let’s go on more</p>
-              <p className='text-[26px]'>adventures, be around good people, learn new things and grow.</p>
+              <p className=' text-[26px]'>As I narrate your fictional bucket list into reality, let’s go on more</p>
+              <p className='text-[26px]'>adventures, be around good people, learn new things and grow!</p>
               
             </MovingComponent>
+              
+            
             </div>
           </div>
         </div>
