@@ -7,6 +7,7 @@ import {useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 
 const WhyUs = () => {
+
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [cursorVariant, setCursorVariant] = useState('default');
 
@@ -17,7 +18,6 @@ const WhyUs = () => {
       };
 
       window.addEventListener('mousemove', mouseMove);
-
       return () => {
         window.removeEventListener('mousemove', mouseMove);
       };
@@ -34,17 +34,21 @@ const WhyUs = () => {
       width: 120,
       x: mousePosition.x - 16,
       y: mousePosition.y - 16,
-      backgroundColor: 'white',
+      backgroundColor: '#bcad3c',
       mixBlendMode: 'difference',
     }
-  }
+  };
 
   const textEnter = () => {
-    setCursorVariant('text');
+    if (window.innerWidth > 768) {
+      setCursorVariant('text');
+    }
   };
 
   const textLeave = () => {
-    setCursorVariant('default');
+    if (window.innerWidth > 768) {
+      setCursorVariant('default');
+    }
   };
 const ref =useRef(null);
   const {scrollYProgress}=useScroll({
@@ -58,7 +62,7 @@ const ref =useRef(null);
       <h1
         onMouseEnter={textEnter}
         onMouseLeave={textLeave}
-        className="text-2xl md:text-5xl lg:text-7xl text-center font-bold md:font-bold mt-4 md:mt-0 mb-6 md:mb-8"
+        className='text-[40px] heading text-center font-bold md:text-center md:text-[55px] text-[#164154] md:font-bold mt-4 md:mt-0  md:mb-[20px]'
       >
         Why Choose Us?
       </h1>
@@ -76,15 +80,15 @@ const ref =useRef(null);
           style={{
               scale:scaleProgess,
               opacity:opacityProgess,
-            }} className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 md:translate-x-0 md:translate-y-0 md:top-[10%] md:left-1/4 md:w-[55%] md:rounded-xl md:h-auto md:bg-[#fff] md:p-8">
-          <div className="flex gap-[70px]">
+            }} className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 md:translate-x-0 md:translate-y-0 md:top-[10%] md:left-[18%] md:w-[68%] md:rounded-xl md:h-auto md:bg-[#fff] md:p-8">
+          <div className="flex gap-[79px]">
             <img
               src={why}
               alt="Why Us Image"
               className="hidden lg:block md:w-[350px] md:h-[300px] md:rounded-xl"
             />
-            <div className=" w-[380px] h-[100px] md:w-auto md:h-[310px] overflow-auto -mt-[50px] -ml-[130px] md:mt-0 max-w-full md:max-w-xl">
-              <p className="text-base text-white md:text-[19px] lg:text-[19px]  md:text-justify md:leading-[30px] md:text-[#000000]">
+            <div className=" w-[380px] h-[100px] md:w-auto md:h-[310px] overflow-auto -mt-[50px] -ml-[130px] md:mt-0 max-w-full md:max-w-[700px]">
+              <p className="subHeading text-base text-white md:text-[23px] md:mt-[] md:pl-[100px] md:pr-[20px] md:text-justify md:leading-[35px] md:text-[#164154]">
                 Your gateway to transformative travel! We redefine Gen-Z journeys, offering budget-friendly, offbeat adventures for personal growth and connection. Escape academic pressures and social media comparisons with SAGE's curated experiences. Explore, learn, and grow with us. Welcome to SAGE, where every destination is a classroom and every adventure a life lesson.
               </p>
             </div>
