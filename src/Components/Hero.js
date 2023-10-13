@@ -45,7 +45,7 @@ const Hero = () => {
       
         <div className='relative'>
           <img src={hero} className='w-full h-auto' alt='Hero Image' />
-          <div className='absolute top-1/4 left-[30%] md:top-[40%] transform -translate-x-1/2 -translate-y-1/2'>
+          <div className='absolute top-[38%] left-[35%] md:left-[30%] md:top-[40%] transform -translate-x-1/2 -translate-y-1/2'>
           <MovingComponent
             type="slideInFromBottom"
             duration="1000ms"
@@ -54,15 +54,15 @@ const Hero = () => {
             timing="ease"
             iteration="1"
             fillMode="none">
-            <h1 className='heading ml-[0px] font-bold text-4xl flex items-baseline md:leading-[90px] md:text-7xl text-[#164154] md:font-extrabold leading-tight'>
-             Ohai <span className='text-[#f0df5c]'>Sanchari!</span>
+            <h1 className='heading ml-[0px] font-bold text-[33px] md:flex md:items-baseline md:gap-4 md:leading-[90px] md:text-7xl text-[#164154] md:font-extrabold leading-tight'>
+             Ohai <span className='md:text-[#f0df5c]'>Sanchari !</span>
             </h1>
             </MovingComponent>
 
             <div className='mt-[50px] hidden md:leading-[40px] md:text-[25px] md:block text-[#164154]'>
            
             <MovingComponent
-            type="slideInFromLeft"
+            type="slideInFromTop"
             duration="1000ms"
             delay="3s"
             direction="normal"

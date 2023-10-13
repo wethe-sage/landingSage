@@ -10,7 +10,7 @@
   
           <div className='max-w-[1000px] -mt-[50px]  p-4 flex flex-col justify-center w-full h-full'>
               
-              <p className='text-[45px] hea font-bold inline border-b-4 border-[#000000] text-[#164154] pb-[1px]'>Reach our SAGES</p>
+              <p className='text-[45px] hea font-bold inline border-b-4 border-[#000000] text-[#164154] pb-[1px]'>Reach Out To Our SAGES</p>
               <p className='subHeading text-[#164154] py-2 text-start text-[17px]'>
                   Submit the form below or send us an mail - info@wethesage.com
               </p>
