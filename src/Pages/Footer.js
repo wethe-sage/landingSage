@@ -98,7 +98,7 @@ const Footer = () => {
             type='email'
             name='newsLetter'
             placeholder='Enter your email address'
-            className='inputbox bg-white border p-2 rounded-l-md'
+            className='inputbox text-[#164154] bg-white border p-2 rounded-l-md'
             />
             <button
             type='submit'
