@@ -1,8 +1,16 @@
 import logohero from './Asset/logohero.png';
 import { Link } from 'react-router-dom';
+import ReactGA from 'react-ga';
 
 const Navbar = () => {
  
+  const ga = () => {
+    ReactGA.event({
+      category: 'Button',
+      action: 'Click',
+      label: 'About Us',
+    });
+  }
 
   return (
     <div className=''>
@@ -17,7 +25,9 @@ const Navbar = () => {
           <ul 
             className='flex gap-3 p-[10px] justify-center align-baseline'>
             <li>
-              <Link to='/about' className='text-lg text-[#164154] font-semibold ' >
+              <Link to='/about' onClick={ga} className='text-lg text-[#164154] font-semibold ' 
+              
+              >
                 About Us
               </Link>
             </li>

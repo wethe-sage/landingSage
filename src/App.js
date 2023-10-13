@@ -5,8 +5,12 @@ import Footer from "./Pages/Footer";
 import Contact from "./Pages/Contact";
 import Hero from "./Components/Hero";
 import About from "./Pages/About";
+import ReactGA from "react-ga4";
+import React from "react";
 
+ReactGA.initialize("G-ZVHJ6FCKMX");
 
+ReactGA.send({ hitType: "pageview", page: window.location.pathname });
 
 function App() {
   return (
