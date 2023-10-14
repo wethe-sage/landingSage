@@ -88,7 +88,7 @@ const ref =useRef(null);
               className="hidden lg:block md:w-[350px] md:h-[300px] md:rounded-xl"
             />
             <div className=" w-[430px] h-[100px] text-justify md:w-auto md:h-[310px] overflow-auto -mt-[50px] -ml-[140px] md:mt-0 max-w-full md:max-w-[700px]">
-              <p className="text-base text-white md:text-[23px] md:mt-[] md:pl-[100px] md:pr-[20px] md:text-justify md:leading-[35px] md:text-[#164154]">
+              <p className="text-base text-white md:text-[23px] md:mt-[] md:pl-[100px] md:pr-[20px] md:text-justify md:leading-[42px] md:text-[#164154]">
                 Your gateway to transformative travel! We redefine Gen-Z journeys, offering budget-friendly, offbeat adventures for personal growth and connection. Escape academic pressures and social media comparisons with SAGE's curated experiences. Explore, learn, and grow with us. Welcome to SAGE, where every destination is a classroom and every adventure a life lesson.
               </p>
             </div>
