@@ -14,7 +14,7 @@ const Navbar = () => {
 
   return (
     <div className=''>
-      <div className='flex h-[70px] md:h-[80px] shadow-2xl justify-between items-center bg-slate-200'>
+      <div className='flex h-[70px] w-full md:h-[80px] shadow-2xl justify-between items-center bg-slate-200'>
         <div>
           <Link to='/'>
             <img src={logohero} alt='logo' className='h-[100px] md:h-[120px]'></img>

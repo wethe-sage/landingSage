@@ -68,7 +68,7 @@ const TravelChange = () => {
   
   return (
     <div className='bg-gray-100 py-10 px-4'>
-      <h1 onMouseEnter={textEnter} onMouseLeave={textLeave}   className='text-[40px] heading text-center font-bold md:text-center md:font-extrabold md:text-[55px] text-[#164154] md:mt-0 md:-mb-[80px]'>
+      <h1 onMouseEnter={textEnter} onMouseLeave={textLeave}   className='text-[30px] heading text-center font-bold md:text-center md:font-extrabold md:text-[55px] text-[#164154] md:mt-0 md:-mb-[80px]'>
         How Travel Changes People?
       </h1>
       {window.innerWidth > 768 && (
@@ -89,7 +89,7 @@ const TravelChange = () => {
           style={{
               scale:scaleProgess,
               opacity:opacityProgess,
-            }}  className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 md:translate-x-0 md:translate-y-0 md:top-[10%] md:left-[18%] md:w-[68%] md:rounded-xl md:h-auto md:bg-[#fff] md:p-8">
+            }}  className="absolute top-1/2 left-[8%] transform -translate-x-1/2 -translate-y-1/2 md:translate-x-0 md:translate-y-0 md:top-[10%] md:left-[18%] md:w-[68%] md:rounded-xl md:h-auto md:bg-[#fff] md:p-8">
            <div className='flex gap-[79px]'>
             <img
               className='hidden lg:block md:mt-0 md:w-[350px] md:h-[330px] md:rounded-xl object-cover'
@@ -97,8 +97,8 @@ const TravelChange = () => {
               alt='Why Us Image'
             />
           
-          <div className=" w-[430px] h-[100px] text-justify md:w-auto md:h-[310px] overflow-auto -mt-[50px] -ml-[140px] md:mt-0 max-w-full md:max-w-[700px]">
-          <p className="text-base text-white md:text-[23px] md:mt-[] md:pl-[100px] md:pr-[20px] md:text-justify md:leading-[35px] md:text-[#164154]">
+          <div className=" w-[300px] h-[100px] text-justify md:w-auto md:h-[310px] overflow-auto -mt-[50px] md:mt-0 max-w-full md:max-w-[700px]">
+          <p className="text-base text-white md:text-[23px] md:mt-[] md:pl-[20px] md:pr-[20px] md:text-justify md:leading-[35px] md:text-[#164154]">
           Travel has the power to transform people in profound and meaningful ways. It exposes us to new cultures, challenges us, and helps us grow. Through travel, we gain a deeper appreciation for the diversity that exists around us and learn to be more open-minded and adaptable. We discover passions and interests we never knew we had and find a sense of purpose and direction in life. Travel changes us, and it's a journey that can never be forgotten.
           </p>
           </div>

@@ -91,18 +91,19 @@ const Services = () => {
       }}
       className='py-10 md:py-20 px-4'
     >
-      <div className='p-4 md:p-12 select-none'>
-        <div>
-          <h1 onMouseEnter={textEnter} onMouseLeave={textLeave} className='heading text-2xl md:text-[55px] text-center font-bold md:text-center text-[#164154] mt-4 md:mt-0 md:mb-[40px] mb-6'>
+      <div className='p-4 md:p-[40px] select-none'>
+        
+          <h1 onMouseEnter={textEnter} onMouseLeave={textLeave} className='text-[30px] heading text-center font-bold md:text-center md:text-[55px] text-[#164154] md:font-extrabold mt-4 md:mt-0  md:mb-[20px]'>
             What SAGE has for you?
           </h1>
         </div>
-        
-        {isMobileOrTablet ? (    
+        <div>
+        {isMobileOrTablet ? (  
+         
           <Carousel
             swipeable={true}
             draggable={true}
-            showDots={true}
+            // showDots={true}
             responsive={responsive}
           >
             <ServiceCard
@@ -141,8 +142,9 @@ const Services = () => {
               description='Get ready to witness exciting Indian festivals and events hosted by SAGE and embrace the seasons with the tribe you wish.'
             />
           </Carousel>
+         
         ) : ( 
-          <div className='rounded-xl bg-[#164154] md:p-[50px] md:pl-[130px] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-[50px] md:mt-[120px]'>
+          <div className='rounded-xl bg-[#164154] md:p-[7%] flex flex-row justify-center items-center flex-wrap gap-[50px]'>
             {window.innerWidth > 768 && (
         <motion.div
           className='cursor'

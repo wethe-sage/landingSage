@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from '../Components/Asset/logo.png';
 import { IoIosCall } from 'react-icons/io';
-import { BsInstagram, BsYoutube, BsLinkedin } from 'react-icons/bs';
+import { BsInstagram, BsWhatsapp, BsLinkedin } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 import icong from '../Components/Asset/icons.png';
 const Footer = () => {
@@ -11,7 +11,7 @@ const Footer = () => {
 
   return (
     <div>
-      <div className='flex flex-col md:flex-row justify-between items-center pl-[20px] pr-[20px] pb-[20px] md:pl-[100px] md:pr-[100px] md:pb-[100px] bg-[#164154]'>
+      <div className='flex flex-col md:flex-row justify-between items-center pl-[20px] pr-[20px] pb-[20px] md:pl-[50px] md:pr-[50px] md:pb-[100px] bg-[#164154]'>
         <div className='flex flex-col gap-[20px] justify-start items-start mt-[20px]'>
          <Link to={"/"}><img className='h-[90px] w-full md:-ml-[10px]' src={logo} alt='Logo' /></Link> 
          <div className='flex flex-col gap-[20px] mt-[50px]'>
@@ -23,7 +23,7 @@ const Footer = () => {
             rel='noreferrer'>
               
             <span className='text-2xl text-red-500'>
-              <img className='h-[30px]' src={icong}></img>
+              <img className='h-[30px] md:hidden lg:block' src={icong}></img>
             </span>
             info@wethesage.com
           </a>
@@ -45,18 +45,18 @@ const Footer = () => {
                   <BsInstagram />
                 </a>
               </li>
-              <li className='text-2xl text-red-500'>
+              <li className='text-2xl text-green-500'>
                 <a
-                  href='https://www.youtube.com/'
+                  href='https://api.whatsapp.com/send/?phone=%2B917989909734&text&type=phone_number&app_absent=0'
                   target='_blank'
                   rel='noreferrer'
                 >
-                  <BsYoutube />
+                  <BsWhatsapp />
                 </a>
               </li>
               <li className='text-2xl text-blue-500'>
                 <a
-                  href='https://www.linkedin.com/'
+                  href='https://www.linkedin.com/company/wethesage/'
                   target='_blank'
                   rel='noreferrer'
                 >
@@ -66,7 +66,7 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        <div className='mt-[10px] hidden md:block md:mt-0'>
+        <div className='mt-[10px] md:ml-[40px] md:m-[5px] hidden md:block md:mt-0'>
           <h1 className=' text-4xl text-[#bcad3c] font-bold mb-[30px] mt-[40px]'>
             Quick Links
           </h1>
@@ -79,7 +79,7 @@ const Footer = () => {
           </ul>
         </div>
 
-        <div className='bg-white flex flex-col md:flex-row p-[20px] mt-[100px] rounded-xl'>
+        <div className='bg-white flex flex-col md:flex-col lg:flex-row p-[20px] mt-[100px] rounded-xl'>
         <div className='md:w-[300px] '>
             <h1 className='Title text-[30px] font-bold text-[#164154]'>
             Join Our Newsletter
@@ -98,7 +98,7 @@ const Footer = () => {
             type='email'
             name='newsLetter'
             placeholder='Enter your email address'
-            className='inputbox text-[#164154] bg-white border p-2 rounded-l-md'
+            className='inputbox text-[#164154] w-[200px] md:w-full bg-white border p-2 rounded-l-md'
             />
             <button
             type='submit'

@@ -57,7 +57,7 @@ const RecentTrip = () => {
         variants={variants}
         animate={cursorVariant}
         />
-        <p className='titel heading text-[30px] text-[#a5a7a8]  relative text-center font-extrabold mb-[70px]'>
+        <p className='titel heading text-[25px] text-[#a5a7a8]  relative text-center font-extrabold mb-[70px]'>
           Adventures fill your soul with stories
         </p>
         </div>

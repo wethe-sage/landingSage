@@ -13,10 +13,9 @@ const About = () => {
           Join us to redefine Indian travel; experience transformative offbeat journeys that fuse adventure and culture; Uncover hidden treasures on the road less taken; Your incredible journey begins here.
         </p>
       </div>
-      <div className='md:-mt-[150px] mb-[50px]'>
+      <div className=' md:mt-[20px] lg:-mt-[150px] mb-[50px]'>
       <Team></Team>
       </div>  
-       
     </div>
   )
 }
