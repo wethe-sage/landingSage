@@ -3,10 +3,10 @@ import React from 'react';
 const ServiceCard = (props) => {
   return (
     <div className='select-none'>
-      <div className='hover:shadow-xl  flex select-none rounded-xl  p-[20px] flex-col justify-center items-center bg-white w-[280px] h-[300px] max-h-[350px]'>
-        <h1 className='text-[70px] text-[#bcad3c] mt-[5px]'>{props.image}</h1>
-        <h1 className='heading font-semibold text-2xl mt-[20px]  text-blue-950'>{props.name}</h1>
-        <p className='text-[#164154] text-sm p-[10px] text-justify'>{props.description}</p>
+      <div className='hover:shadow-xl ml-[20px] flex select-none rounded-xl p-4 md:p-6 flex-col justify-center items-center bg-white w-72 md:w-80 max-h-80'>
+        <h1 className='text-[45px] md:text-[70px] text-[#bcad3c] mt-1 md:mt-3'>{props.image}</h1>
+        <h1 className='heading font-semibold text-xl md:text-2xl mt-4 md:mt-6 text-blue-950'>{props.name}</h1>
+        <p className='text-[#164154] text-sm md:text-base p-2 md:p-4 text-justify'>{props.description}</p>
       </div>
     </div>
   );

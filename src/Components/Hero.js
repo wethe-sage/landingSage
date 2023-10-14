@@ -7,7 +7,7 @@ import TravelChange from "./TravelChange";
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useEffect } from 'react';
-import MovingComponent from 'react-moving-text'
+import MovingComponent from 'react-moving-text';
 
 const boxVariants = {
   visible: { opacity: 1, scale: 1, x: 0, transition: { duration: 0.5 } },
@@ -17,7 +17,7 @@ const boxVariants = {
 const Hero = () => {
   const control = useAnimation();
   const [ref, inView] = useInView({
-    triggerOnce: true, 
+    triggerOnce: true,
     threshold: 0.2,
   });
 
@@ -27,11 +27,9 @@ const Hero = () => {
     }
   }, [control, inView]);
 
-  
   const animationControl = useAnimation();
 
   useEffect(() => {
-    
     if (inView) {
       animationControl.start('visible');
     } else {
@@ -39,13 +37,11 @@ const Hero = () => {
     }
   }, [inView, animationControl]);
 
-  
   return (
     <div>
-      
-        <div className='relative'>
-          <img src={hero} className='w-full h-auto' alt='Hero Image' />
-          <div className='absolute top-[38%] left-[35%] md:left-[30%] md:top-[40%] transform -translate-x-1/2 -translate-y-1/2'>
+      <div className='relative'>
+        <img src={hero} className='w-full h-auto' alt='Hero Image' />
+        <div className='absolute top-[38%] left-[60%] md:left-[30%] md:top-[33%] md:flex md:flex-col md:gap-[20px] transform -translate-x-1/2 -translate-y-1/2'>
           <MovingComponent
             type="slideInFromBottom"
             duration="1000ms"
@@ -53,40 +49,36 @@ const Hero = () => {
             direction="normal"
             timing="ease"
             iteration="1"
-            fillMode="none">
-            <h1 className='heading ml-[0px] font-bold text-[33px] md:flex md:items-baseline md:gap-4 md:leading-[90px] md:text-7xl text-[#164154] md:font-extrabold leading-tight'>
-             Ohai <span className='md:text-[#f0df5c]'>Sanchari !</span>
+            fillMode="none"
+          >
+            <h1 className='heading -ml-[5px] font-bold text-[33px] md:-ml-[10px] md:flex md:items-baseline md:gap-4 md:leading-[90px] md:text-7xl text-[#164154] md:font-extrabold leading-tight'>
+              Ohai <span className='text-[#ffffff]  md:text-[#bcad3c]'>Sanchari </span>!
             </h1>
-            </MovingComponent>
+          </MovingComponent>
 
-            <div className='mt-[50px] hidden md:leading-[40px] md:text-[25px] md:block text-[#164154]'>
-           
+          <div className='mt-[0px] w-[400px] text-gray-800 text-[10px] md:w-full md:leading-[40px] md:font-semibold md:tracking-tight md:text-[25px] md:block md:text-[#164154]'>
             <MovingComponent
-            type="slideInFromTop"
-            duration="1000ms"
-            delay="3s"
-            direction="normal"
-            timing="ease"
-            iteration="1"
-            fillMode="none">
-
-              <p className='text-justify tracking-wider text-[26px]'>
+              type=""
+              duration="1000ms"
+              delay="3s"
+              direction="normal"
+              timing="ease"
+              iteration="1"
+              fillMode="none"
+            >
+              <p className='text-justify tracking-wider md:text-[26px]'>
                 I am SAGE, the author of your offbeat journeys.
               </p>
-              <p className=' text-[26px]'>As I narrate your fictional bucket list into reality, let’s go on more</p>
-              <p className='text-[26px]'>adventures, be around good people, learn new things and grow!</p>
-              
+              <p className='md:text-[26px]'>As I narrate your fictional bucket list into reality, let’s go on more</p>
+              <p className='md:text-[26px]'>adventures, be around good people, learn new things and grow!</p>
             </MovingComponent>
-              
-            
-            </div>
           </div>
         </div>
-        <div><Services /></div>
-        <div> <RecentTrip /></div>
-        <div><WhyUs /></div>
-        <div><TravelChange /></div>
-      
+      </div>
+      <div><Services /></div>
+      <div><RecentTrip /></div>
+      <div><WhyUs /></div>
+      <div><TravelChange /></div>
     </div>
   );
 };

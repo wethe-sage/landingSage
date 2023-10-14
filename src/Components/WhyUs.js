@@ -62,7 +62,7 @@ const ref =useRef(null);
       <h1
         onMouseEnter={textEnter}
         onMouseLeave={textLeave}
-        className='text-[40px] heading text-center font-bold md:text-center md:text-[55px] text-[#164154] md:font-bold mt-4 md:mt-0  md:mb-[20px]'
+        className='text-[40px] heading text-center font-bold md:text-center md:text-[55px] text-[#164154] md:font-extrabold mt-4 mb-[40px] md:mt-0  md:mb-[20px]'
       >
         Why Choose Us?
       </h1>
@@ -73,7 +73,7 @@ const ref =useRef(null);
       <div className="relative mt-4">
         <img
           src={bg}
-          className="w-full h-[165px] md:h-[450px] opacity-90 brightness-[50%] bg-blue-500"
+          className="w-full h-[165px] md:h-[470px] rounded-lg opacity-90 brightness-[50%] bg-blue-500"
           alt="Background"
         />
         <motion.div  ref={ref}
@@ -87,8 +87,8 @@ const ref =useRef(null);
               alt="Why Us Image"
               className="hidden lg:block md:w-[350px] md:h-[300px] md:rounded-xl"
             />
-            <div className=" w-[380px] h-[100px] md:w-auto md:h-[310px] overflow-auto -mt-[50px] -ml-[130px] md:mt-0 max-w-full md:max-w-[700px]">
-              <p className="subHeading text-base text-white md:text-[23px] md:mt-[] md:pl-[100px] md:pr-[20px] md:text-justify md:leading-[35px] md:text-[#164154]">
+            <div className=" w-[430px] h-[100px] text-justify md:w-auto md:h-[310px] overflow-auto -mt-[50px] -ml-[140px] md:mt-0 max-w-full md:max-w-[700px]">
+              <p className="text-base text-white md:text-[23px] md:mt-[] md:pl-[100px] md:pr-[20px] md:text-justify md:leading-[35px] md:text-[#164154]">
                 Your gateway to transformative travel! We redefine Gen-Z journeys, offering budget-friendly, offbeat adventures for personal growth and connection. Escape academic pressures and social media comparisons with SAGE's curated experiences. Explore, learn, and grow with us. Welcome to SAGE, where every destination is a classroom and every adventure a life lesson.
               </p>
             </div>

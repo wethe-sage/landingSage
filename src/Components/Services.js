@@ -9,16 +9,17 @@ import { BiTrip } from "react-icons/bi";
 import './recentTrip.css';
 import {GiMagnifyingGlass} from "react-icons/gi";
 import {motion,useScroll, useTransform } from 'framer-motion';
-import "./recentTrip.css"
-const Services = () => {
-  const ref =useRef(null);
-  const {scrollYProgress}=useScroll({
-    target: ref,
-    offset:["0 1", "0.85 1"],
+import "./recentTrip.css";
 
-  })
-  const scaleProgess =useTransform(scrollYProgress, [0, 1], [0.5,1]);
-  const opacityProgess =useTransform(scrollYProgress, [0, 1], [0.6,1]);
+const Services = () => {
+  const ref = useRef(null);
+  const {scrollYProgress} = useScroll({
+    target: ref,
+    offset: ["0 1", "0.6 1"],
+  });
+
+  const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.5, 1]);
+  const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
 
   const isMobileOrTablet = window.innerWidth <= 1024;
 
@@ -26,20 +27,19 @@ const Services = () => {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
       items: 3,
-      slidesToSlide: 3 
+      slidesToSlide: 3,
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },
       items: 2,
-      slidesToSlide: 2 
+      slidesToSlide: 2,
     },
     mobile: {
       breakpoint: { max: 464, min: 0 },
-      items: 1
-    }
+      items: 1,
+    },
   };
 
-  
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [cursorVariant, setCursorVariant] = useState('default');
 
@@ -85,24 +85,20 @@ const Services = () => {
 
   return (
     <motion.div ref={ref}
-      style={
-        {
-          scale:scaleProgess,
-          opacity:opacityProgess,
-        }
-      }
-    className='py-10 md:py-20 px-4 '>
-      
-      <div className='p-[45px] md:p-12 select-none '>
-        <div> 
+      style={{
+        scale: scaleProgress,
+        opacity: opacityProgress,
+      }}
+      className='py-10 md:py-20 px-4'
+    >
+      <div className='p-4 md:p-12 select-none'>
+        <div>
+          <h1 onMouseEnter={textEnter} onMouseLeave={textLeave} className='heading text-2xl md:text-[55px] text-center font-bold md:text-center text-[#164154] mt-4 md:mt-0 md:mb-[40px] mb-6'>
+            What SAGE has for you?
+          </h1>
+        </div>
         
-         <h1 onMouseEnter={textEnter} onMouseLeave={textLeave} className='heading text-[40px] text-center font-bold md:text-center md:text-[55px] md:font-bold text-[#164154] mt-4 md:mt-0 md:-mb-[80px] mb-6'>
-            What Services We Provide You?
-         </h1>
-          
-          </div>
-        
-        {isMobileOrTablet ? (
+        {isMobileOrTablet ? (    
           <Carousel
             swipeable={true}
             draggable={true}
@@ -192,9 +188,7 @@ const Services = () => {
             />
           </div>
         )}
-        
       </div>
-      
     </motion.div>
   );
 };
