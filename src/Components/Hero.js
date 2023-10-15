@@ -9,6 +9,7 @@ import { useInView } from 'react-intersection-observer';
 import { useEffect } from 'react';
 import MovingComponent from 'react-moving-text';
 
+
 const boxVariants = {
   visible: { opacity: 1, scale: 1, x: 0, transition: { duration: 0.5 } },
   hidden: { opacity: 0, scale: 0, x: 200 },
@@ -79,6 +80,7 @@ const Hero = () => {
       <div><RecentTrip /></div>
        <div><WhyUs /></div>
       <div><TravelChange /></div> 
+     
     </div>
   );
 };
