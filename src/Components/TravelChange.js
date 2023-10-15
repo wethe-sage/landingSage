@@ -97,7 +97,7 @@ const TravelChange = () => {
               alt='Why Us Image'
             />
           
-          <div className=" w-[300px] h-[100px] text-justify md:w-auto md:h-[310px] overflow-auto -mt-[50px] md:mt-0 max-w-full md:max-w-[700px]">
+          <div className=" w-[300px] h-[100px] text-justify md:w-auto md:scrollbar-thin md:scrollbar-thumb-gray-300  md:h-[310px] overflow-auto -mt-[50px] md:mt-0 max-w-full md:max-w-[700px]">
           <p className="text-base text-white md:text-[23px] md:mt-[] md:pl-[20px] md:pr-[20px] md:text-justify md:leading-[35px] md:text-[#164154]">
           Travel has the power to transform people in profound and meaningful ways. It exposes us to new cultures, challenges us, and helps us grow. Through travel, we gain a deeper appreciation for the diversity that exists around us and learn to be more open-minded and adaptable. We discover passions and interests we never knew we had and find a sense of purpose and direction in life. Travel changes us, and it's a journey that can never be forgotten.
           </p>

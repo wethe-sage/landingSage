@@ -3,14 +3,15 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import TeamCard from './TeamCard';
 import naveen from "./Asset/naveen.png"
-import chandu from './Asset/Chandu.jpg'
 import vihari from "./Asset/vihari.png"
 import rohit from './Asset/Rohit.jpg'
 import nishu from './Asset/nishu.jpeg'
 import sagar from "./Asset/sagar.jpeg"
 import priyanshu from "./Asset/priyanshu.jpeg"
+import bhavya from "./Asset/bhavya.jpg"
 
 const Team = () => {
+  const isMobileOrTablet = window.innerWidth <= 1024;
   const responsive = {
     superLargeDesktop: {
       breakpoint: { max: 4000, min: 3000 },
@@ -58,14 +59,6 @@ const Team = () => {
     },
     {
       id: 4,
-      image: chandu,
-      name: 'Chandra Sekhar',
-      url: 'https://www.linkedin.com/in/rahul-vihari-9b0b0a1b4/https://www.linkedin.com/in/k-s-chandra-sekhar-lanka-682963bb/',
-      designation: 'CTO',
-      exp: ' Software Engineer',
-    },
-    {
-      id: 5,
       image: nishu,
       name: 'Nishu Agarwal',
       url: 'https://www.linkedin.com/in/nishuagarwal/',
@@ -73,12 +66,20 @@ const Team = () => {
       exp: 'Branding & Digital Marketing Strategist ',
     },
     {
-      id: 6,
+      id: 5,
       image: sagar,
       name: 'Sagar Tomar',
       url: 'https://www.linkedin.com/in/naveen-anand-733022283/?trk=contact-info',
       designation: 'Content Creator',
       exp:"Photographer | Graphic Designer"
+    },
+    {
+      id: 6,
+      image: bhavya,
+      name: 'Bhavya Patamsetti',
+      url: 'https://www.linkedin.com/in/bhavyapatamsetti/',
+      designation: 'Community Manager',
+      exp: 'UI & UX Designer',
     },
     {
       id: 7,
@@ -103,9 +104,22 @@ const Team = () => {
   ));
 
   return (
+    <>
+    {isMobileOrTablet ? (  
     <div className='' >
       <Carousel responsive={responsive}>{data}</Carousel>
     </div>
+    ) : ( 
+    <div className='rounded-xl  flex flex-row justify-center items-center flex-wrap gap-[80px]'>
+    {window.innerWidth > 768 && (
+      <div className=' flex flex-row justify-center items-center flex-wrap gap-[130px]'>
+        {data}
+      </div>
+    )}
+
+    </div>
+    )}
+    </>
   );
 };
 

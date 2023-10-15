@@ -4,8 +4,8 @@ import { BsLinkedin } from "react-icons/bs";
 const TeamCard = (props) => {
   return (
     <div>
-      <div className='card  flex flex-col justify-center items-center rounded-2xl'>
-            <img src={props.image} className='h-[35vh] object-cover w-[50%] rounded-full'></img>
+      <div className='card  flex flex-col justify-center w-full items-center rounded-2xl'>
+            <img src={props.image} className='h-[35vh] object-cover w-[200px] rounded-full'></img>
 
             <div className='flex items-center gap-3 mt-[10px]'>
             <h1 className='text-bold text-2xl'>{props.name}</h1>

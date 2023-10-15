@@ -14,7 +14,7 @@ ReactGA.send({ hitType: "pageview", page: window.location.pathname });
 
 function App() {
   return (
-    <div className="app">
+    <div className="app ">
       <BrowserRouter>
       <Navbar></Navbar>     
       <Routes>

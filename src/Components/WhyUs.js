@@ -87,8 +87,8 @@ const ref =useRef(null);
               alt="Why Us Image"
               className="hidden lg:block md:w-[350px] md:h-[300px] md:rounded-xl"
             />
-            <div className=" w-[300px] h-[100px] text-justify md:w-auto md:h-[310px] overflow-auto -mt-[50px] md:mt-0 max-w-full md:max-w-[700px]">
-              <p className="text-base text-white md:text-[23px] md:mt-[] md:pl-[20px] md:pr-[20px] md:text-justify md:leading-[42px] md:text-[#164154]">
+            <div className=" w-[300px] h-[100px] text-justify md:w-auto md:h-[310px] md:scrollbar-thin md:scrollbar-thumb-gray-300  overflow-auto -mt-[50px] md:mt-0 max-w-full md:max-w-[700px]">
+              <p className="text-base text-white md:text-[23px] md:mt-[]  md:pl-[20px] md:pr-[20px] md:text-justify md:leading-[34px] md:text-[#164154]">
                 Your gateway to transformative travel! We redefine Gen-Z journeys, offering budget-friendly, offbeat adventures for personal growth and connection. Escape academic pressures and social media comparisons with SAGE's curated experiences. Explore, learn, and grow with us. Welcome to SAGE, where every destination is a classroom and every adventure a life lesson.
               </p> 
             </div>

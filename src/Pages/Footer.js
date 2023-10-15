@@ -79,12 +79,12 @@ const Footer = () => {
           </ul>
         </div>
 
-        <div className='bg-white flex flex-col md:flex-col lg:flex-row p-[20px] mt-[100px] rounded-xl'>
+        <div className='bg-white flex flex-col md:flex-collg:flex-row p-[20px] mt-[100px] lg:w-[500px] rounded-xl'>
         <div className='md:w-[300px] '>
             <h1 className='Title text-[30px] font-bold text-[#164154]'>
             Join Our Newsletter
             </h1>
-            <p className='description text-[15px] font-normal text-gray-500 mt-[10px] mb-[20px]'>
+            <p className='description text-[15px] font-normal text-gray-500 lg:w-[450px] mt-[10px] mb-[20px]'>
             For our upcoming trips, blogs on transformative travel, exciting discounts and more.
             </p>
         </div>
