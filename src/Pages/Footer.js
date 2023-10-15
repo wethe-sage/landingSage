@@ -4,13 +4,27 @@ import { IoIosCall } from 'react-icons/io';
 import { BsInstagram, BsWhatsapp, BsLinkedin } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 import icong from '../Components/Asset/icons.png';
+import  { useRef } from 'react';
+import emailjs from '@emailjs/browser';
 const Footer = () => {
-  const handleBtn = () => {
-    alert('Thank you for Subscribing');
-  };
+  
+  const form = useRef();
 
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_2oo8qzl', 'template_i2ooerd', form.current, '8876KXnB1cf5Z5DPl')
+      .then((result) => {
+          alert('Thanks for subscribing', result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+  };
   return (
+
+    
     <div>
+      
       <div className='flex flex-col md:flex-row justify-between items-center pl-[20px] pr-[20px] pb-[20px] md:pl-[50px] md:pr-[50px] md:pb-[100px] bg-[#164154]'>
         <div className='flex flex-col gap-[20px] justify-start items-start mt-[20px]'>
          <Link to={"/"}><img className='h-[90px] w-full md:-ml-[10px]' src={logo} alt='Logo' /></Link> 
@@ -90,8 +104,7 @@ const Footer = () => {
         </div>
         
         <form
-            method='POST'
-            action='https://getform.io/f/01bb9c33-6bd0-4585-be4d-efc169d667be'
+            ref = {form} onSubmit={sendEmail} 
             className='md:flex md:items-center'
         >
             <input
@@ -103,7 +116,6 @@ const Footer = () => {
             <button
             type='submit'
             className='btn p-2 border border-white text-white bg-[#bcad3c] rounded-r-md mt-[10px] md:mt-0'
-            onClick={handleBtn}
             >
             Subscribe
             </button>
@@ -113,6 +125,6 @@ const Footer = () => {
       </div>
     </div>
   );
-};
+}
 
 export default Footer;
