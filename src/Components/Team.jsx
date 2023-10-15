@@ -5,9 +5,9 @@ import TeamCard from './TeamCard';
 import naveen from "./Asset/naveen.png"
 import vihari from "./Asset/vihari.png"
 import rohit from './Asset/Rohit.jpg'
-import nishu from './Asset/nishu.jpeg'
-import sagar from "./Asset/sagar.jpeg"
-import priyanshu from "./Asset/priyanshu.jpeg"
+import nishu from './Asset/nishu.jpg'
+import sagar from "./Asset/sagar.jpg"
+import priyanshu from "./Asset/priyanshu.jpg"
 import bhavya from "./Asset/bhavya.jpg"
 
 const Team = () => {
