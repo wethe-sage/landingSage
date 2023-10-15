@@ -9,6 +9,7 @@ import nishu from './Asset/nishu.jpg'
 import sagar from "./Asset/sagar.jpg"
 import priyanshu from "./Asset/priyanshu.jpg"
 import bhavya from "./Asset/bhavya.jpg"
+import varsha from "./Asset/varsha.jpg"
 
 const Team = () => {
   const isMobileOrTablet = window.innerWidth <= 1024;
@@ -83,7 +84,7 @@ const Team = () => {
     },
     {
       id: 7,
-      image: naveen,
+      image: varsha,
       name: 'R Varsha',
       url: 'https://www.linkedin.com/in/varsha-r-69491b223/',
       designation: 'Finance Intern',
