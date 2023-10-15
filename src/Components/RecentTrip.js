@@ -11,58 +11,74 @@ const RecentTrip = () => {
   const toggleText = () => {
     setShowFullText(!showFullText);
   };
+  
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [cursorVariant, setCursorVariant] = useState('default');
 
   useEffect(() => {
-    const mouseMove = (e) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-    };
+    if (window.innerWidth > 768) { // Only enable the cursor on laptops and monitors
+      const mouseMove = (e) => {
+        setMousePosition({ x: e.clientX, y: e.clientY });
+      };
 
-    window.addEventListener('mousemove', mouseMove)
-    return () => {
-      window.removeEventListener('mousemove', mouseMove)
-    } 
-  },[]);
+      window.addEventListener('mousemove', mouseMove);
+      return () => {
+        window.removeEventListener('mousemove', mouseMove);
+      };
+    }
+  }, []);
 
   const variants = {
     default: {
       x: mousePosition.x,
       y: mousePosition.y,
-    }, 
-    text: {
-      height:120,
-      width:120,
-      x: mousePosition.x-16,
-      y: mousePosition.y-16,
-      backgroundColor: 'black', 
-      mixBlendMode: 'difference',
     },
-  }
-  
-  const textEnter = () => {
-    setCursorVariant('text');
+    text: {
+      height: 120,
+      width: 120,
+      x: mousePosition.x - 16,
+      y: mousePosition.y - 16,
+      backgroundColor: 'black',
+      mixBlendMode: 'difference',
+    }
+  };
 
-  }
+  const textEnter = () => {
+    if (window.innerWidth > 768) {
+      setCursorVariant('text');
+    }
+  };
+
   const textLeave = () => {
-    setCursorVariant('default');
-  }
+    if (window.innerWidth > 768) {
+      setCursorVariant('default');
+    }
+  };
+
   return (
     <>
-      <div className='recentTrip '>
+      <div className='recentTrip'>
         <div className='flex flex-col gap-[70px]'>
-        <h1 onMouseEnter={textEnter} onMouseLeave={textLeave} className='text-[40px] md:font-extrabold heading text-center font-bold md:text-center md:text-[55px] text-[#164154] mt-4 md:mt-0 md:-mb-[80px]'>Previous Chapter</h1>
-        <motion.div
-        className='cursor'
-        variants={variants}
-        animate={cursorVariant}
-        />
-        <p className='titel heading text-[25px] text-[#a5a7a8]  relative text-center font-extrabold mb-[70px]'></p>
+          <h1
+            onMouseEnter={textEnter}
+            onMouseLeave={textLeave}
+            className='text-[40px] md:font-extrabold -mb-[130px] heading text-center font-bold md:text-center md:text-[55px] text-[#164154] mt-4 md:mt-0 md:-mb-[80px]'
+          >
+            Previous Chapter
+          </h1>
+          {window.innerWidth > 768 && (
+            <motion.div
+              className='cursor'
+              variants={variants}
+              animate={cursorVariant}
+            />
+          )}
+          <p className='titel heading text-[25px] text-[#a5a7a8]  relative text-center font-extrabold mb-[70px]'></p>
         </div>
 
         <div className='destination mb-[100px] ml-[50px] mr-[50px] flex items-center justify-between '>
           <div className='destiText w-[45%] mr-[30px] text-start text-[20px] '>
-            <p
+          <p
               className={`text-justify font-normal flex justify-center  text-[#164154] ${showFullText ? 'block' : 'max-h-[380px] overflow-auto scrollbar-thin scrollbar-thumb-gray-300  pr-[5px]'}`}
             >
               Sar Pass Trek in Manali, a name that conjured visions of lush forests, rolling hills,
@@ -93,12 +109,19 @@ const RecentTrip = () => {
               Pass, with its trials and triumphs, will forever hold a special place in my heart as a
               testament to the power of perseverance and the wonders of the great outdoors.
             </p>
-            
           </div>
 
           <div className='image flex relative w-1/2 justify-between -z-[99]'>
-            <img alt='trip image'src={image2} className='w-[49%] h-[350px] object-cover rounded-[6px] shadow-lg hover:rotate-180' ></img>
-            <img alt='trip image' src={image1}  className='w-[49%] absolute top-[17%] right-0 h-[350px] object-cover rounded-[6px] shadow-2xl'></img>
+            <img
+              alt='trip image'
+              src={image2}
+              className='w-[49%] h-[350px] object-cover rounded-[6px] shadow-lg hover:rotate-180'
+            />
+            <img
+              alt='trip image'
+              src={image1}
+              className='w-[49%] absolute top-[17%] right-0 h-[350px] object-cover rounded-[6px] shadow-2xl'
+            />
           </div>
         </div>
       </div>
