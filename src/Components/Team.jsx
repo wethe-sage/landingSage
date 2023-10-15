@@ -95,7 +95,7 @@ const Team = () => {
       image: priyanshu,
       name: 'Priyanshu Pandey',
       url: 'https://www.linkedin.com/in/priyanshu-pandey-8889r/',
-      designation: 'Developer',
+      designation: 'Developer Intern',
 
     }
     
