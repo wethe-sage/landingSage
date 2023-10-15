@@ -80,7 +80,7 @@ const Team = () => {
       name: 'Bhavya Patamsetti',
       url: 'https://www.linkedin.com/in/bhavyapatamsetti/',
       designation: 'Community Manager',
-      exp: 'UI & UX Designer',
+      exp: 'Data Scientist | ML',
     },
     {
       id: 7,
