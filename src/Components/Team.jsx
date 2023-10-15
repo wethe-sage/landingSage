@@ -83,6 +83,14 @@ const Team = () => {
     },
     {
       id: 7,
+      image: naveen,
+      name: 'R Varsha',
+      url: 'https://www.linkedin.com/in/varsha-r-69491b223/',
+      designation: 'Finance Intern',
+      exp: 'B.Com (Hons)',
+    },
+    {
+      id: 8,
       image: priyanshu,
       name: 'Priyanshu Pandey',
       url: 'https://www.linkedin.com/in/priyanshu-pandey-8889r/',
