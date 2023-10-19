@@ -87,8 +87,8 @@ const Team = () => {
       image: varsha,
       name: 'R Varsha',
       url: 'https://www.linkedin.com/in/varsha-r-69491b223/',
-      designation: 'Finance Intern',
-      exp: 'B.Com (Hons)',
+      designation: 'Financial planner',
+      exp: 'Accounts Manager',
     },
     {
       id: 8,
