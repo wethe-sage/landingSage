@@ -12,14 +12,23 @@ const Footer = () => {
 
   const sendEmail = (e) => {
     e.preventDefault();
-
+  
+    // Check if the newsletter email field is empty
+    const emailInput = form.current.querySelector('input[name="newsLetter"]');
+    if (!emailInput.value.trim()) {
+      alert('Email address cannot be empty');
+      return;
+    }
+  
+    // If the email field is filled, proceed with sending the newsletter email
     emailjs.sendForm('service_2oo8qzl', 'template_i2ooerd', form.current, '8876KXnB1cf5Z5DPl')
       .then((result) => {
-          alert('Thanks for subscribing', result.text);
+        alert('Message Sent, We will get back to you shortly', result.text);
       }, (error) => {
-          console.log(error.text);
+        console.log(error.text);
       });
   };
+  
   return (
 
     

@@ -7,14 +7,28 @@
 
       const sendEmail = (e) => {
         e.preventDefault();
-
+      
+        // Check if any field is empty
+        const formData = new FormData(form.current);
+        let isEmpty = false;
+      
+        formData.forEach((value, key) => {
+          if (!value.trim()) {
+            alert(`${key} cannot be empty`);
+            isEmpty = true;
+          }
+        });
+      
+        if (isEmpty) {
+          return;
+        }
         emailjs.sendForm('service_2oo8qzl', 'template_i2ooerd', form.current, '8876KXnB1cf5Z5DPl')
-          .then((result) => {
-              alert('Message Sent, We will get back to you shortly', result.text);
-          }, (error) => {
-              console.log(error.text);
-          });
-      };
+        .then((result) => {
+          alert('Message Sent, We will get back to you shortly', result.text);
+        }, (error) => {
+          console.log(error.text);
+        });
+    };
       
       return (
        
